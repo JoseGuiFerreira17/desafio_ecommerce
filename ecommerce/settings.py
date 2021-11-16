@@ -26,9 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'core',
-    'account',
-    'product',
+    #'core',
+    #'account',
+    #'product',
 ]
 
 TAGGIT_CASE_INSENSITIVE = True
