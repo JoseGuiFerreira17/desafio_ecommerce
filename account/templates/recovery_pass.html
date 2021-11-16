@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks%}
+{% block content %}
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endfor %}
+            <div class="form-group">
+                <label>Email<label>
+                    {% render_field form.email class='form-control' %}
+              </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+{% endblock %}

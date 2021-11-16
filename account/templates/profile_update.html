@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% load widget_tweaks%}
+{% block content %}
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            {% if success %}
+                <p>Os dados foram alterados com sucesso</p>
+            {% endif %}
+            {% for error in form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">{{ error }}</div>
+            {% endfor %}
+            {% for field in form %}
+            <div class="form-group">
+                <label>{{ field.label_tag }}</label>
+                {{ field }}
+              </div>
+            {{ field.errors }}
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+{% endblock %}
